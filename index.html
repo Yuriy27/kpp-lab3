@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Find IP</title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <script src="js/script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvbFA1gMlQmNmvYxmjqTx1-_wYfvHgWDQ&callback=initMap" async defer></script>
+    </head>
+    <body>
+        <div id="main-div">
+            <div id="map"></div>
+            <div id="ip-search-div">
+                <input id="ip-search-input" type="text" placeholder="ENTER IP" onkeypress="keyPressedHandler(event)">
+                <button id="ip-serach-button-go" onclick="searchIP()">Search</button>
+            </div>
+        </div>
+    </body>
+</html>

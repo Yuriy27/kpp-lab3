@@ -1,0 +1,50 @@
+#ip-search-div {
+    position: fixed;
+    width: 20%;
+    top: 18%;
+    left: 50%;
+    margin-left: -10%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#ip-search-input {
+    padding: 10 15;
+    width: 100%;
+    border: 2px solid orange;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+
+    color: grey;
+    font-size: 18px;
+}
+
+#ip-search-input:focus {
+    outline: none;
+}
+
+#ip-serach-button-go {
+    background-color: orange;    
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border: 2px solid orange;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+#ip-serach-button-go:hover {
+    background-color: #fdb838;
+    border-color: #fdb838;
+}
+#ip-serach-button-go:focus {
+    outline: none;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
