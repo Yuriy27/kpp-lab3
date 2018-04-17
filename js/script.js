@@ -51,12 +51,19 @@ function searchIP() {
 }
 
 function attachIPInfo(marker, data) {
-    const html = `<h2>${data.ip} <img class="country-flag-img" src="${data.location.country_flag}"></h2>`
-        + `<hr>`
-        + `<h4>Country: ${data.country_name}</h4>`
-        + `<h4>City: ${data.city}</h4>`
-        + `<h4>Country code: ${data.country_code}</h4>`
-        + `<h4>Zip: ${data.zip}</h4>`;
+    let html = `<h2>${data.ip} <img class="country-flag-img" src="${data.location.country_flag}"></h2>`;
+    const propsHtml = {
+        'country_name': `<h4>Country: ${data.country_name}</h4>`,
+        'city': `<h4>City: ${data.city}</h4>`,
+        'country_code': `<h4>Country code: ${data.country_code}</h4>`,
+        'zip': `<h4>Zip: ${data.zip}</h4>`
+    };
+    const keys = ['country_name', 'city', 'country_code', 'zip'];
+    keys.forEach(key => {
+        if (data[key] !== null) {
+            html += propsHtml[key];
+        }
+    });
     const info = new google.maps.InfoWindow({
         content: html
     });
