@@ -40,10 +40,26 @@ function searchIP() {
                     map: map,
                     title: 'Hello World!'
                   });
+                attachIPInfo(marker, data);
                 map.panTo(center);
                 console.log(map);
                 console.log(data);
             });
         });
     
+    
+}
+
+function attachIPInfo(marker, data) {
+    const html = `<h2>${data.ip} <img class="country-flag-img" src="${data.location.country_flag}"></h2>`
+        + `<hr>`
+        + `<h4>Country: ${data.country_name}</h4>`
+        + `<h4>City: ${data.city}</h4>`
+        + `<h4>Country code: ${data.country_code}</h4>`
+        + `<h4>Zip: ${data.zip}</h4>`;
+    const info = new google.maps.InfoWindow({
+        content: html
+    });
+    marker.addListener('click', () => info.open(marker.get('map'), marker));
+    info.open(marker.get('map'), marker);
 }
